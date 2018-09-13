@@ -1,0 +1,100 @@
+<html>
+<head>
+	<title>Contact Form | AM Photography by Amitava Ghosh</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" >
+	    $(function() {
+	        $("#Submit").click(function(e) {
+	            e.preventDefault();
+	            var _message = $("#_message").val();
+	            var _replyto = $("#_replyto").val();
+	            var name = $("#name").val();
+	            var dataString = 'name='+ name + '& email=' + _replyto + '&message=' + _message;
+
+	            if(name=='' || _message=='' || _replyto=='')
+	            {
+	                //Do nothing
+	            }
+	            else
+	            {
+	                $.ajax({
+	                    type: "POST",
+	                    url: "//formspree.io/amitava.itcian@gmail.com",
+	                    data: dataString,
+	                    success: function(){
+	                    	document.getElementById('formPlace').innerHTML = "<div style='padding-top:10px;'>Thanks for your interest.<br/>I have received your feedback/information. Shortly I will be contacting you.</div>";
+	                    }
+	                });
+	                document.getElementById('formPlace').innerHTML = "<div style='padding-top:10px;'>Thanks for your interest.<br/>I have received your feedback/information. Shortly I will be contacting you.</div>";
+	            }
+	            return false;
+	        });
+	    });
+	</script>
+	<style>
+		p {margin-top:5px;margin-bottom: 5px;}
+	</style>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({
+	          google_ad_client: "ca-pub-2117747571772290",
+	          enable_page_level_ads: true
+	     });
+	</script>
+</head>
+<body style="background:lightgray;color:darkslategray;padding:10px;font-family:fantasy,'Comic Sans MS','Lucida Sans Unicode';">
+	<div style="font-size:17px;">
+			<p>
+				Dear Guest, 
+			</p>
+			<p>
+			Welcome to AM Photography. I am glad that you are here. Please leave your comments or suggestions to me, whatever you feel about the images or contact me if you are interested about the photographs. 
+			</p>
+			<br/>
+			Thank you. 
+			<br/>
+			Amitava Ghosh
+			<br/>
+			<a target="_blank" href="mailto:amitava.itcian@gmail.com?Subject=AM Photography: Contact">amitava.itcian@gmail.com</a>
+			<hr style="background: grey;height: 1px;"/>
+			<!--
+			<form action="//formspree.io/amitava.itcian@gmail.com" method="POST" id="formPlace">
+			    Your Name<br/>
+			    <input type="text" name="name" style="width:345px" id="name"/>
+			    <br/>
+			    Your Email<br/>
+			    <input type="email" name="_replyto" style="width:345px" id="_replyto"/>
+			    <br/>
+			    Your Feedback<br/>
+			    <textarea name="_message" style="width:345px;height:100px" id="_message"></textarea>
+			    <br/>
+			    <input type="submit" value="Send" id="Submit">
+			</form>
+			-->
+			<h3 style=" margin-bottom: 5px;margin-top: 5px;">Post Your Comments</h3>
+			<div id="disqus_thread" style="overflow: auto;height: 225px;padding: 10px;"></div>
+			<script type="text/javascript">
+			    /* * * CONFIGURATION VARIABLES * * */
+			    var disqus_shortname = 'amitavaghosh';
+			    
+			    /* * * DON'T EDIT BELOW THIS LINE * * */
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		</div>	
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125725643-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-125725643-1');
+		</script>
+</body>
+</html>
