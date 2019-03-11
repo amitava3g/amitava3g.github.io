@@ -1,3 +1,5 @@
 CACHE MANIFEST
-img/unmute.jpg
+*.jpeg
 *.jpg
+*.js
+*.css
